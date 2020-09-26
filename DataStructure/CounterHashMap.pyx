@@ -21,7 +21,7 @@ cdef class CounterHashMap(dict):
             result += key + " " + self[key].__str__() + "\n"
         return result
 
-    cpdef put(self, key: object):
+    cpdef put(self, object key):
         """
         The put method takes a object type input. If this map contains a mapping for the key, it puts this key after
         incrementing its value by one. If his map does not contain a mapping, then it directly puts key with the value
@@ -37,7 +37,7 @@ cdef class CounterHashMap(dict):
         else:
             self[key] = 1
 
-    cpdef putNTimes(self, key: object, N: int):
+    cpdef putNTimes(self, object key, int N):
         """
         The putNTimes method takes an object and an integer N as inputs. If this map contains a mapping for the key, it
         puts this key after incrementing its value by N. If his map does not contain a mapping, then it directly puts
@@ -55,7 +55,7 @@ cdef class CounterHashMap(dict):
         else:
             self[key] = N
 
-    cpdef int count(self, key: object):
+    cpdef int count(self, object key):
         """
         The count method takes an object as input, if this map contains a mapping for the key, it returns the value
         corresponding this key, 0 otherwise.
@@ -90,7 +90,7 @@ cdef class CounterHashMap(dict):
             total += self[key]
         return total
 
-    cpdef object max(self, threshold: float = 0.0):
+    cpdef object max(self, double threshold = 0.0):
         """
         The max method takes a threshold as input and loops through the mappings contained in this map.
         It accumulates the count values and if the current entry's count value is greater than maxCount, which is
@@ -122,7 +122,7 @@ cdef class CounterHashMap(dict):
         else:
             return None
 
-    cpdef add(self, toBeAdded: CounterHashMap):
+    cpdef add(self, CounterHashMap toBeAdded):
         """
         The add method adds value of each key of toBeAdded to the current counterHashMap.
 
@@ -134,7 +134,7 @@ cdef class CounterHashMap(dict):
         for value in toBeAdded:
             self.putNTimes(value, toBeAdded[value])
 
-    cpdef list topN(self, N: int):
+    cpdef list topN(self, int N):
         """
         The topN method takes an integer N as inout. It creates an list result and loops through the the
         mappings contained in this map and adds each entry to the result list. Then sort this list
