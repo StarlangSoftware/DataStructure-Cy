@@ -1,12 +1,7 @@
 from DataStructure.Cache.CacheNode cimport CacheNode
-from DataStructure.Cache.CacheLinkedList cimport CacheLinkedList
 
 
 cdef class LRUCache(object):
-
-    cdef int __cacheSize
-    cdef dict __map
-    cdef CacheLinkedList __cache
 
     def __init__(self, cacheSize: int):
         """
