@@ -1,11 +1,7 @@
-from DataStructure.Cache.CacheLinkedList cimport CacheLinkedList
-
-
 cdef class LRUCache(object):
 
     cdef int __cacheSize
-    cdef dict __map
-    cdef CacheLinkedList __cache
+    cdef object __map
 
     cpdef bint contains(self, key: object)
     cpdef object get(self, key: object)

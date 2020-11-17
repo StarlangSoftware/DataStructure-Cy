@@ -1,4 +1,4 @@
-from DataStructure.Cache.CacheNode cimport CacheNode
+import collections
 
 
 cdef class LRUCache(object):
@@ -14,8 +14,7 @@ cdef class LRUCache(object):
             Integer input defining cache size.
         """
         self.__cacheSize = cacheSize
-        self.__cache = CacheLinkedList()
-        self.__map = {}
+        self.__map = collections.OrderedDict()
 
     cpdef bint contains(self, key: object):
         """
@@ -50,12 +49,11 @@ cdef class LRUCache(object):
         object
             data value if the dictionary has the given key, None otherwise.
         """
-        cdef CacheNode cacheNode
         if key in self.__map:
-            cacheNode = self.__map[key]
-            self.__cache.removeGiven(cacheNode)
-            self.__cache.add(cacheNode)
-            return cacheNode.getData()
+            value = self.__map[key]
+            self.__map.pop(key)
+            self.__map[key] = value
+            return value
         else:
             return None
 
@@ -73,10 +71,6 @@ cdef class LRUCache(object):
         data : object
             object type input
         """
-        cdef CacheNode removed, cacheNode
         if len(self.__map) == self.__cacheSize:
-            removed = self.__cache.remove()
-            self.__map.pop(removed.getKey())
-        cacheNode = CacheNode(key, data)
-        self.__cache.add(cacheNode)
-        self.__map[key] = cacheNode
+            self.__map.popitem(last=False)
+        self.__map[key] = data
