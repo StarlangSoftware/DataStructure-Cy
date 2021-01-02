@@ -7,7 +7,7 @@ setup(
     version='1.0.5',
     packages=['DataStructure', 'DataStructure.Cache'],
     package_data={'DataStructure': ['*.pxd', '*.pyx', '*.c'], 'DataStructure.Cache': ['*.pxd', '*.pyx', '*.c']},
-    url='https://github.com/olcaytaner/DataStructure-Cy',
+    url='https://github.com/StarlangSoftware/DataStructure-Cy',
     license='',
     author='olcaytaner',
     author_email='olcay.yildiz@ozyegin.edu.tr',
