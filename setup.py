@@ -10,6 +10,6 @@ setup(
     url='https://github.com/olcaytaner/DataStructure-Cy',
     license='',
     author='olcaytaner',
-    author_email='olcaytaner@isikun.edu.tr',
+    author_email='olcay.yildiz@ozyegin.edu.tr',
     description='Simple Data Structures Library'
 )
