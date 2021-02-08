@@ -1,3 +1,8 @@
+Cache
+============
+
+The idea of caching items for fast retrieval goes back nearly to the beginning of the computer science. We also use that idea and use a LRU cache for storing morphological analyses of surface forms. Before analyzing a surface form, we first look up to the cache, and if there is an hit, we just take the analyses from the cache. If there is a miss, we analyze the surface form and put the morphological analyses of that surface form in the LRU cache. As can be expected, the speed of the caching mechanism surely depends on the size of the cache.
+
 For Developers
 ============
 You can also see [Python](https://github.com/starlangsoftware/DataStructure-Py), [Java](https://github.com/starlangsoftware/DataStructure), [C++](https://github.com/starlangsoftware/DataStructure-CPP), [Swift](https://github.com/starlangsoftware/DataStructure-Swift), or [C#](https://github.com/starlangsoftware/DataStructure-CS) repository.
