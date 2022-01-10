@@ -7,6 +7,7 @@ from DataStructure.CounterHashMap import CounterHashMap
 class MyTestCase(unittest.TestCase):
 
     def test_Put1(self):
+        
         counterHashMap = CounterHashMap()
         counterHashMap.put("item1")
         counterHashMap.put("item2")
