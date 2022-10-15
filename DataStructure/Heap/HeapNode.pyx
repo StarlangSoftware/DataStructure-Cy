@@ -5,3 +5,6 @@ cdef class HeapNode:
 
     cpdef object getData(self):
         return self.__data
+
+    def __repr__(self):
+        return f"{self.__data}"

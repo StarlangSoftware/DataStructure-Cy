@@ -2,6 +2,7 @@ cdef class Heap:
 
     cdef list __array
     cdef int __count
+    cdef int __N
     cdef object comparator
 
     cpdef bint isEmpty(self)

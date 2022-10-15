@@ -9,6 +9,7 @@ cdef class Heap:
         self.comparator = comparator
         self.__count = 0
         self.__array = []
+        self.__N = N
         for i in range(N):
             self.__array.append(None)
 
@@ -56,6 +57,10 @@ cdef class Heap:
         return tmp.getData()
 
     cpdef insert(self, object data):
-        self.__count = self.__count + 1
+        if self.__count < self.__N:
+            self.__count = self.__count + 1
         self.__array[self.__count - 1] = HeapNode(data)
         self.percolateUp(self.__count - 1)
+
+    def __repr__(self):
+        return f"{self.__array}"
