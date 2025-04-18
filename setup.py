@@ -16,7 +16,7 @@ setup(
                            ],
                           compiler_directives={'language_level' : "3"}),
     name='nlpToolkit-datastructure-cy',
-    version='1.0.13',
+    version='1.0.14',
     packages=['DataStructure', 'DataStructure.Cache', 'DataStructure.Tree', 'DataStructure.Heap'],
     package_data={'DataStructure': ['*.pxd', '*.pyx', '*.c'],
                   'DataStructure.Cache': ['*.pxd', '*.pyx', '*.c'],

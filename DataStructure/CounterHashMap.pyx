@@ -90,7 +90,7 @@ cdef class CounterHashMap(dict):
             total += self[key]
         return total
 
-    cpdef object max(self, double threshold = 0.0):
+    cpdef object maxItem(self, double threshold = 0.0):
         """
         The max method takes a threshold as input and loops through the mappings contained in this map.
         It accumulates the count values and if the current entry's count value is greater than maxCount, which is

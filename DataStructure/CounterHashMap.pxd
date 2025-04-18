@@ -4,6 +4,6 @@ cdef class CounterHashMap(dict):
     cpdef putNTimes(self, object key, int N)
     cpdef int count(self, object key)
     cpdef int sumOfCounts(self)
-    cpdef object max(self, double threshold = *)
+    cpdef object maxItem(self, double threshold = *)
     cpdef add(self, CounterHashMap toBeAdded)
     cpdef list topN(self, int N)

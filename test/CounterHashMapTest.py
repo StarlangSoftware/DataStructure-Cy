@@ -66,7 +66,7 @@ class MyTestCase(unittest.TestCase):
         counterHashMap.put("item1")
         counterHashMap.put("item2")
         counterHashMap.put("item1")
-        self.assertEqual("item1", counterHashMap.max())
+        self.assertEqual("item1", counterHashMap.maxItem())
 
     def test_MaxThreshold1(self):
         counterHashMap = CounterHashMap()
@@ -76,16 +76,16 @@ class MyTestCase(unittest.TestCase):
         counterHashMap.put("item1")
         counterHashMap.put("item2")
         counterHashMap.put("item1")
-        self.assertEqual("item1", counterHashMap.max(0.4999))
-        self.assertNotEqual("item1", counterHashMap.max(0.5001))
+        self.assertEqual("item1", counterHashMap.maxItem(0.4999))
+        self.assertNotEqual("item1", counterHashMap.maxItem(0.5001))
 
     def test_MaxThreshold2(self):
         counterHashMap = CounterHashMap()
         for i in range(1000000):
             counterHashMap.put(randrange(100).__str__())
-        probability = counterHashMap.count(counterHashMap.max()) / 1000000.0
-        self.assertIsNotNone(counterHashMap.max(probability - 0.001))
-        self.assertIsNone(counterHashMap.max(probability + 0.001))
+        probability = counterHashMap.count(counterHashMap.maxItem()) / 1000000.0
+        self.assertIsNotNone(counterHashMap.maxItem(probability - 0.001))
+        self.assertIsNone(counterHashMap.maxItem(probability + 0.001))
 
     def test_Add1(self):
         counterHashMap1 = CounterHashMap()
